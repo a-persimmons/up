@@ -669,25 +669,25 @@ test("page metadata follows the route", async ({ page }) => {
   await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /词汇/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/threads/part-1/2-vocabulary/",
+    "https://a-persimmons.github.io/up/threads/part-1/2-vocabulary/",
   );
   await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
     "content",
-    "https://byoungd.github.io/up/threads/part-1/2-vocabulary/",
+    "https://a-persimmons.github.io/up/threads/part-1/2-vocabulary/",
   );
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", /\/assets\/feature\.png$/);
   await expect(page.locator('meta[property="og:image:type"]')).toHaveAttribute("content", "image/png");
   await expect(page.locator('link[rel="alternate"][hreflang="zh-CN"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/threads/part-1/2-vocabulary/",
+    "https://a-persimmons.github.io/up/threads/part-1/2-vocabulary/",
   );
   await expect(page.locator('link[rel="alternate"][hreflang="en-US"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/en/threads/part-1/2-vocabulary/",
+    "https://a-persimmons.github.io/up/en/threads/part-1/2-vocabulary/",
   );
   await expect(page.locator('link[rel="alternate"][hreflang="x-default"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/threads/part-1/2-vocabulary/",
+    "https://a-persimmons.github.io/up/threads/part-1/2-vocabulary/",
   );
   const chapterData = await structuredDataFromPage(page);
   expect(chapterData).toMatchObject({
@@ -695,7 +695,7 @@ test("page metadata follows the route", async ({ page }) => {
     "@type": "Chapter",
     inLanguage: "zh-CN",
     author: { "@type": "Person", name: "韩先凯" },
-    isPartOf: { "@type": "Book", name: "人生进阶指南", url: "https://byoungd.github.io/up/" },
+    isPartOf: { "@type": "Book", name: "人生进阶指南", url: "https://a-persimmons.github.io/up/" },
   });
   expect(chapterData.dateModified).toBe("2026-09-02");
 });
@@ -709,7 +709,7 @@ test("home metadata follows the lifelong-learning positioning", async ({ page })
   );
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/",
+    "https://a-persimmons.github.io/up/",
   );
   await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
     "content",
@@ -743,7 +743,7 @@ test("home metadata follows the lifelong-learning positioning", async ({ page })
   await expect(page).toHaveTitle(/Life Level-up Guide/);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/en/",
+    "https://a-persimmons.github.io/up/en/",
   );
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(
     "content",
@@ -923,9 +923,9 @@ test("brand and social assets load at their declared dimensions", async ({ page,
   const sitemapResponse = await request.get("sitemap.xml");
   expect(sitemapResponse.status()).toBe(200);
   const sitemap = await sitemapResponse.text();
-  expect(sitemap).toContain('hreflang="zh-CN" href="https://byoungd.github.io/up/threads/part-1/2-vocabulary"');
-  expect(sitemap).toContain('hreflang="en-US" href="https://byoungd.github.io/up/en/threads/part-1/2-vocabulary"');
-  expect(sitemap).toContain('hreflang="x-default" href="https://byoungd.github.io/up/threads/part-1/2-vocabulary"');
+  expect(sitemap).toContain('hreflang="zh-CN" href="https://a-persimmons.github.io/up/threads/part-1/2-vocabulary"');
+  expect(sitemap).toContain('hreflang="en-US" href="https://a-persimmons.github.io/up/en/threads/part-1/2-vocabulary"');
+  expect(sitemap).toContain('hreflang="x-default" href="https://a-persimmons.github.io/up/threads/part-1/2-vocabulary"');
 });
 
 test("AI resource-layer chapter has metadata and navigation", async ({ page }) => {
@@ -937,7 +937,7 @@ test("AI resource-layer chapter has metadata and navigation", async ({ page }) =
   );
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/threads/part-3/2-ai-development-and-resource-layer/",
+    "https://a-persimmons.github.io/up/threads/part-3/2-ai-development-and-resource-layer/",
   );
   await expect(
     page.getByRole("link", { name: "AI 开发与资源层创业", exact: true }).first(),
@@ -983,7 +983,7 @@ test("legacy English story route redirects to the aligned Part II path", async (
   ).toBeVisible();
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
     "href",
-    "https://byoungd.github.io/up/en/threads/part-2/my-story/",
+    "https://a-persimmons.github.io/up/en/threads/part-2/my-story/",
   );
 });
 

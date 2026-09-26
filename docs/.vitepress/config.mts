@@ -5,7 +5,7 @@ import sharp from "sharp";
 import { defineConfig } from "vitepress";
 import { bilingualRoutePairs, enNavigation, toSidebar, zhNavigation } from "./navigation.mjs";
 
-const origin = "https://byoungd.github.io";
+const origin = "https://a-persimmons.github.io";
 const base = "/up/";
 const siteUrl = `${origin}${base}`;
 const configDir = dirname(fileURLToPath(import.meta.url));
@@ -16,7 +16,7 @@ const defaultDescription =
   "《人生进阶指南》帮助普通人在 AI 时代持续学习、完成真实项目、穿越人生低谷并留下成长证据。";
 const defaultDescriptionEn =
   "Life Level-up Guide helps ordinary people learn continuously, complete real projects, move through difficult seasons, and preserve evidence of growth in the AI era.";
-const editLinkPattern = "https://github.com/byoungd/up/edit/master/docs/:path";
+const editLinkPattern = "https://github.com/a-persimmons/up/edit/master/docs/:path";
 const bilingualRouteMap = new Map(
   bilingualRoutePairs.flatMap(({ zh, en }) => [
     [zh, { zh, en }],
